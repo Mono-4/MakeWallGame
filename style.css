@@ -1,0 +1,291 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'coron';
+  src: url(Hoshino71-R.otf) format("woff");
+}
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+:root {
+  --edge_long: 100px;
+  --edge_short: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "coron", cursive;
+}
+/* 枠組み */
+body {
+  background: #3a3839;
+  color: #fff;
+  font-family: "coron", cursive;
+  font-size: 20px;
+}
+
+.container {
+  background: #3a3839;
+  height: 100%;
+  width: 100vw;
+}
+
+.field {
+  position: relative;
+}
+
+table {
+  margin: 0 auto;
+}
+/* td要素の状態 */
+td {
+  border-radius: 50px;
+  box-shadow: 0 0 8px #fff;
+  cursor: pointer;
+  transition: 1s;
+}
+
+td:hover {
+  box-shadow: inset 0 0 10px #fff;
+}
+
+.wall {
+  animation: wall 0.3s;
+  background: radial-gradient(#9a9a9a, white);
+  border-radius: 30px;
+  box-shadow: 0 0 10px #fff, 0 0 15px #fff;
+}
+
+.wall1 {
+  height: var(--edge_long,100px);
+  width: var(--edge_short,20px);
+}
+
+.wall2 {
+  height: 20px;
+  width: var(--edge_long,100px);
+}
+
+.nowall {
+  animation: wall 0.3s;
+  border-radius: 30px;
+}
+
+@keyframes wall {
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+.mass {
+  background: radial-gradient(#5b5458, #3a3839);
+  height: 100px;
+  width: var(--edge_long,100px);
+}
+
+.mark {
+  animation: mark 1s infinite alternate;
+  transition: 0.2s;
+}
+
+@keyframes mark {
+  0% {
+    box-shadow: 0 0 0 orange;
+  }
+
+  100% {
+    box-shadow: 0 0 20px orange;
+  }
+}
+.waste {
+  background: transparent;
+  box-shadow: 0 0 0 transparent;
+  cursor: default;
+  height: var(--edge_short,20px);
+  pointer-events: none;
+  width: var(--edge_short,20px);
+}
+
+.mass {
+  background: radial-gradient(#5b5458, #3a3839);
+}
+
+/* プレイヤー */
+.p1:before {
+  animation: p 0.5s;
+  background: radial-gradient(red, white);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #b73e91;
+  content: "";
+  display: block;
+  height: 80px;
+  margin: auto;
+  width: 80px;
+}
+
+.p2:before {
+  animation: p 0.5s;
+  background: radial-gradient(#25489c, white);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #3ebde0;
+  content: "";
+  display: block;
+  height: 80px;
+  margin: auto;
+  width: 80px;
+}
+
+.p3 {
+  animation: p 0.5s;
+  background: radial-gradient(green, white);
+  box-shadow: 0 0 20px green;
+}
+
+@keyframes p {
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+/* 上の表示 */
+
+h1 {
+  font-size:5rem;
+  border-bottom: solid #aaa 0.5px;
+  color: #fff;
+  margin: 0 auto 50px;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 0 10px #bbb, 0 0 20px #eee;
+  top: 30px;
+}
+
+h2 {
+  color: #fff;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.phase ul {
+  text-align: center;
+}
+
+.phase li {
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 2.5em;
+  height: 100px;
+  line-height: 100px;
+  list-style: none;
+  text-align: center;
+  width: 100px;
+}
+/* 上の表示　装飾 */
+.number_red {
+  box-shadow: inset 0 0 30px #e40067;
+  text-shadow: 0 0 10px #fff;
+  
+}
+
+.number_blue {
+  box-shadow: inset 0 0 30px #87ceeb;
+  text-shadow: 0 0 10px #fff;
+}
+
+.red {
+  color: #e40067;
+}
+
+.white {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff,
+;
+}
+
+.blue {
+  color: #87ceeb;
+}
+
+/* ボタン */
+.input1 {
+  background: #3a3839;
+  border: #fff solid 1px;
+  border-radius: 100px;
+  color: #fff;
+  display: block;
+  font-size: 1.5em;
+  height: 50px;
+  margin: 50px auto;
+  padding: 0px 10px 55px 10px;
+  width: 300px;
+}
+
+.input1:hover {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff,
+    0 0 70px #fff, 0 0 80px #fff;
+}
+/* 説明 */
+
+.content {
+  display: none;
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 100px 0 0;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.menu li a {
+  border-radius: 15px 15px 0 0;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3em;
+  padding: 8px 0;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
+}
+
+.active ol {
+  list-style-position: inside;
+}
+.active li {
+  margin: 10px;
+}
+dt {
+  margin-top: 10px;
+}
+
+.menu li a.active {
+  color: #fff;
+ text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
+.menu li a:not(.active):hover {
+  transition: opacity 0.4s;
+}
+
+.content.active {
+  border-radius: 15px;
+  color: #fff;
+  display: block;
+  height: 400px;
+  margin: 0 auto 50px;
+  max-width: 800px;
+  min-height: 150px;
+  padding: 50px;
+}

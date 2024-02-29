@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+:root {
+  --edge_long: calc(95vw / (1 * 5 + 5 * 4) * 5);
+  --edge_short: calc(95vw / (1 * 5 + 5 * 4) * 1);
+}
+/* 枠組み */
+body {
+  font-size: 16px;
+ 
+}
+table {
+  margin: 0px auto;
+}
+/* 上の説明 */
+.phase li {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+}
+/* td要素の状態 */
+.mass {
+  width: var(--edge_long, 75px);
+  height: var(--edge_long, 75px);
+}
+
+.wall1 {
+  width: var(--edge_short, 15px);
+  height: var(--edge_long, 75px);
+}
+
+.wall2 {
+  width: var(--edge_long, 75px);
+  height: var(--edge_short, 15px);
+}
+
+.waste {
+  width: var(--edge_short, 15px);
+  height: var(--edge_short, 15px);
+}
+/* プレイヤー */
+.p1:before {
+  width: var(--edge_long, 75px);
+  height: var(--edge_long, 75px);
+}
+
+.p2:before {
+  width: var(--edge_long, 75px);
+  height: var(--edge_long, 75px);
+}
+
+.p3:before {
+  width: var(--edge_long, 75px);
+  height: var(--edge_long, 75px);
+}
+/* 説明 */
+.menu li a {
+  width: 120px;
+}
+
+.content.active {
+  padding: 30px;
+  display: block;
+  height: 400px;
+  margin: 0 auto 50px auto;
+}
